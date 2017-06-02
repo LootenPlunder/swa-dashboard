@@ -43,6 +43,11 @@ swa \
   --daily-update-at '19:00' # Time to send daily update, default is 18:00/6pm (optional)
   --nonstop # Filter to only nonstop flights (optional)
 ```
+Note for Windows users: Do not wrap arguments in apostrophes. A correct command would resemble the following:
+
+```
+swa --from DAL --to LGA --leave-date 6/5/2017 --return-date 6/6/2017 --leave-time morning --return-time evening --passengers 1
+```
 
 If you would like to look at flights going **one way** between two airports, you can use the `--one-way` flag. This ignores values entered with `--return-date` and `--return-time`, and `--total-deal-price`.
 
@@ -76,6 +81,19 @@ export TWILIO_ACCOUNT_SID=""
 export TWILIO_AUTH_TOKEN=""
 export TWILIO_PHONE_FROM=""
 export TWILIO_PHONE_TO=""
+```
+Note of Windows Users:
+
+If you are using command host or powershell, environment variables need to be established using the 'set' command, rather than export. For ease of use, you can embed your swa command inside a .bat file, with the environment variables set beforehand:
+
+```@echo off
+
+set TWILIO_ACCOUNT_SID=""
+set TWILIO_AUTH_TOKEN=""
+set TWILIO_PHONE_FROM=""
+set TWILIO_PHONE_TO=""
+
+swa --from DEN to -AUS...
 ```
 
 ### Telegram integration
