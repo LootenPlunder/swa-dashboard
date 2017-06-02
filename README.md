@@ -82,11 +82,12 @@ export TWILIO_AUTH_TOKEN=""
 export TWILIO_PHONE_FROM=""
 export TWILIO_PHONE_TO=""
 ```
-Note of Windows Users:
+Note for Windows Users:
 
 If you are using command host or powershell, environment variables need to be established using the 'set' command, rather than export. For ease of use, you can embed your swa command inside a .bat file, with the environment variables set beforehand:
 
-```@echo off
+```
+@echo off
 
 set TWILIO_ACCOUNT_SID=""
 set TWILIO_AUTH_TOKEN=""
